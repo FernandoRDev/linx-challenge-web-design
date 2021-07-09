@@ -15,7 +15,6 @@ body {
 
 @media only screen and (max-width: 40rem) {
   .container {
-    padding: 0 1rem;
     margin: 1rem;
   }
 }
@@ -196,11 +195,6 @@ main .search {
     -ms-flex-line-pack: stretch;
         align-content: stretch;
     padding: 2rem 1rem;
-  }
-}
-
-@media only screen and (max-width: 48rem) {
-  main .search {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -267,6 +261,13 @@ main .search form button {
 
 main .search form button:hover {
   background: #422755;
+}
+
+@media only screen and (max-width: 40rem) {
+  main .search {
+    width: calc(100% - 2rem);
+    margin-bottom: 2.5rem !important;
+  }
 }
 
 main .search-select {
@@ -436,31 +437,34 @@ main .tasks .task-card {
   transition: transform .2s ease;
   transition: transform .2s ease, -webkit-transform .2s ease;
   min-height: 22rem;
+  font-family: 'Open Sans', sans-serif !important;
+  font-style: normal;
+  font-weight: normal;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
   -ms-flex-item-align: start;
       align-self: start;
-  font-family: 'Open Sans', sans-serif !important;
-  font-style: normal;
-  font-weight: normal;
 }
 
-main .tasks .task-card:hover {
-  -webkit-box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-          box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+@media only screen and (min-width: 40rem) {
+  main .tasks .task-card:hover {
+    -webkit-box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  }
 }
 
-main .tasks .task-card:hover .task-card-popup {
-  position: absolute;
-  z-index: 100;
-}
-
-main .tasks .task-card:hover .task-card-options {
-  display: block;
-  visibility: visible;
-  -webkit-transform: scale(1);
-          transform: scale(1);
+@media only screen and (min-width: 40rem) {
+  main .tasks .task-card:hover .task-card-popup {
+    position: absolute;
+    z-index: 100;
+  }
+  main .tasks .task-card:hover .task-card-options {
+    display: block;
+    visibility: visible;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
 }
 
 main .tasks .task-card p {
@@ -482,6 +486,52 @@ main .tasks .task-card-title {
   line-height: 1.188rem;
   color: #414141;
   padding: 0.625rem 1.125rem 0.313rem 1.125rem;
+}
+
+main .tasks .task-card-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+main .tasks .task-card .task-btn-finish-mobile {
+  display: none;
+  margin: 0 1.125rem 0.625rem 1.125rem;
+  background: #6E4B87;
+  border: 0;
+  border-radius: 0.5rem;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  -webkit-transition: .2s ease;
+  transition: .2s ease;
+  padding: .5rem 1rem;
+  background-color: white;
+  color: #422755;
+  border-width: 0.063rem;
+  border-style: solid;
+  border-color: #422755;
+}
+
+main .tasks .task-card .task-btn-finish-mobile:hover {
+  background: #422755;
+}
+
+main .tasks .task-card .task-btn-finish-mobile:hover {
+  color: white;
+}
+
+main .tasks .task-card .card-clock {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin-right: 1rem;
+  margin-top: 1rem;
 }
 
 main .tasks .task-card-description {
@@ -595,6 +645,39 @@ main .tasks .task-card-options .task-btn-change span {
 
 main .tasks .task-card-options .task-btn-change:hover {
   background-color: #9b2a1e;
+}
+
+@media only screen and (max-width: 40rem) {
+  main .tasks .task-card {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    min-height: 1rem;
+  }
+  main .tasks .task-card-img {
+    border-radius: 0.875rem 0 0 0.875rem;
+    min-height: .5rem;
+    width: 40% !important;
+  }
+  main .tasks .task-card-description {
+    font-size: .688rem;
+  }
+  main .tasks .task-card .task-btn-finish-mobile {
+    display: block;
+  }
+  main .tasks .task-card-date {
+    padding-bottom: 1.125rem;
+  }
+  main .tasks .task-card-title {
+    padding-top: 1.125rem;
+  }
+  main .tasks .task-card .card-clock {
+    display: block;
+  }
+  main .tasks .task-card .task-card-info {
+    position: relative;
+  }
 }
 
 main .newsletter {
