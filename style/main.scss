@@ -1,0 +1,636 @@
+//Imports
+@import url("https://fonts.googleapis.com/css?family=Open+Sans&display=swap");
+
+//Color variables
+$primary: #422755;
+$primary-light:#6E4B87;
+$secondary: #FEAF3D;
+$tertiary: #F04837;
+$tertiary-dark: #9b2a1e;
+$gray-dark: #757575;
+$gray: #E5E5E5;
+
+//Mixin - Breakpoints
+@mixin sm {
+    @media only screen and (max-width: 40rem) {
+        @content;
+    }
+}
+
+@mixin search-bp {
+    @media only screen and (max-width: 48rem) {
+        @content;
+    }
+}
+
+@mixin md {
+    @media only screen and (min-width: 40rem) {
+        @content;
+    }
+}
+
+@mixin lg {
+    @media only screen and (min-width: 64rem) {
+        @content;
+    }
+}
+
+@mixin xl {
+    @media only screen and (min-width: 80rem) {
+        @content;
+    }
+}
+
+//Mixin - Flex
+@mixin flex {
+    display: flex;
+}
+
+@mixin flex-row {
+    flex-direction: row;
+}
+
+@mixin flex-wrap {
+    flex-wrap: wrap;
+}
+
+@mixin flex-column {
+    flex-direction: column;
+}
+
+@mixin flex-center {
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+//Mixin - Components
+@mixin standard-font {
+    font-family: 'Open Sans', sans-serif !important;
+    font-style: normal;
+    font-weight: normal;
+}
+
+@mixin standard-btn {
+    background: $primary-light;
+    border: 0;
+    border-radius: 0.5rem;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    transition: .2s ease;
+
+    &:hover {
+        background: $primary;
+    }
+}
+
+@mixin standard-card {
+    cursor: pointer;
+    background-color: white;
+    border-radius: 0.875rem;
+    border-color: rgba(0, 0, 0, 0.2);
+    border-width: 0.063rem;
+    border-style: solid;
+    overflow: hidden;
+    text-decoration: none;
+    transition: transform .2s ease;
+    min-height: 22rem;
+
+    &:hover {
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    }
+
+}
+
+/////////////////////////////////////////////////
+
+body {
+    background-color: white !important;
+    font-family: 'Open Sans', sans-serif !important;
+    margin: 0;
+    min-height: 100vh;
+    @include flex();
+    @include flex-column();
+}
+
+.container {
+    @include sm {
+        padding: 0 1rem;
+        margin: 1rem;
+    }
+
+    @include md {
+        padding: 0 2rem;
+        margin: 1rem;
+    }
+
+    @include lg {
+        padding: 0 4rem;
+        margin: 1.5rem;
+    }
+
+    @include xl {
+        padding: 0 15rem;
+        margin: 3rem;
+    }
+}
+
+header {
+    @include flex();
+    @include flex-column();
+    @include flex-center();
+
+    img {
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        height: 25rem;
+        width: 100%;
+        object-fit: cover;
+
+        @include sm {
+            height: 12rem;
+        }
+
+        @include md {
+            height: 20rem;
+        }
+
+        @include lg {
+            top: -4rem;
+            height: 25rem;
+        }
+
+        @include xl {
+            top: -10rem;
+            height: 32rem;
+        }
+    }
+
+    @include sm {
+        padding: 4rem 2rem 0 2rem;
+    }
+
+    @include md {
+        padding: 6rem 2rem 4rem 2rem;
+    }
+
+    @include lg {
+        padding: 6rem 2rem 6rem 2rem;
+    }
+
+    p {
+        @include standard-font();
+        color: white;
+        text-align: center;
+        text-align: center;
+    }
+
+    .h-title {
+        font-size: 2.25rem;
+        font-weight: bolder;
+        margin: 0.875rem;
+        line-height: 49px;
+    }
+
+    .h-subtitle {
+        font-size: 1.125rem;
+        margin: 0.875rem;
+
+        @include sm {
+            margin-top: 5rem;
+            margin-bottom: 0;
+            color: $primary;
+        }
+    }
+
+}
+
+main {
+    margin-top: 4.375rem !important;
+    @include flex();
+    @include flex-column();
+    @include flex-center();
+
+    @include sm {
+        margin-top: 2rem !important;
+    }
+
+    .search {
+        @include flex();
+        @include flex-row();
+        background-color: $secondary;
+        margin-bottom: 4.375rem;
+        padding: 1.5rem;
+        border-radius: 0.5rem;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+        max-width: 67.5rem;
+
+        @include search-bp {
+            justify-content: center;
+            align-content: stretch;
+            padding: 2rem 1rem;
+        }
+
+        @include search-bp {
+            @include flex-column();
+        }
+
+        form {
+            @include flex();
+            align-items: center;
+
+            @include search-bp {
+                margin-bottom: 1rem;
+                width: 100%;
+                justify-content: center;
+            }
+
+            input {
+                @include standard-font();
+                border-radius: 0.5rem 0 0 0.5rem;
+                background: white;
+                width: 14.625rem;
+                height: 2.125rem;
+                border: 0;
+                padding: 0 0 0 1rem;
+                font-size: 0.75rem;
+                text-decoration: none;
+
+                @include search-bp {
+                    width: 80%;
+                }
+            }
+
+            button {
+                @include standard-font();
+                @include standard-btn();
+                width: 4.313rem;
+                margin-left: -0.5rem;
+                height: 2.125rem;
+                font-size: 0.875rem;
+            }
+        }
+
+        &-select {
+            @include flex();
+            align-items: center;
+            font-family: 'Open Sans', sans-serif !important;
+
+            @include search-bp {
+                width: 100%;
+                justify-content: center;
+            }
+
+            label {
+                white-space: nowrap;
+                color: white;
+                font-size: 0.875rem;
+                margin-right: 1rem;
+                margin-left: 1rem;
+            }
+
+            select {
+                border-radius: 0.5rem;
+                width: 14.625rem;
+                height: 2.125rem;
+                border: 0;
+                padding: 0 1rem;
+                font-size: 0.875rem;
+                cursor: pointer;
+                text-decoration: none;
+                background: url("data:image/svg+xml,<svg height='0.625rem' width='0.625rem' viewBox='0 0 16 16' fill='%23000000' xmlns='http://www.w3.org/2000/svg'><path d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/></svg>") no-repeat right #fff;
+                -webkit-appearance: none;
+                padding-right: 2rem !important;
+                background-position: calc(100% - 0.75rem) center !important;
+
+                @include search-bp {
+                    width: 80%;
+                }
+            }
+
+        }
+
+    }
+
+    .tasks {
+        @include flex();
+        @include flex-column();
+        @include flex-center();
+        margin-bottom: 4.375rem;
+
+        &-grid {
+            margin-bottom: 3.125rem;
+            display: grid;
+            gap: 2rem;
+            list-style-type: none;
+            width: 100%;
+            height: 100%;
+
+
+            @include sm {
+                grid-template-columns: repeat(1, minmax(16rem, 1fr));
+            }
+
+            @include md {
+                grid-template-columns: repeat(2, minmax(16rem, 1fr));
+            }
+
+            @include lg {
+                grid-template-columns: repeat(3, minmax(16rem, 1fr));
+            }
+
+            @include xl {
+                grid-template-columns: repeat(4, minmax(16rem, 1fr));
+            }
+        }
+
+        &-more {
+            @include standard-btn();
+            padding: 0.5rem 2.5rem;
+        }
+
+        .task-card-popup {
+            position: absolute;
+            z-index: 100;
+            background: $primary;
+            border: 0;
+            border-radius: 0.5rem;
+            font-weight: bold;
+            color: white;
+            border-radius: 0 .313rem .313rem 0;
+            padding: .5rem .75rem;
+            margin-top: 1rem;
+            margin-left: -.5rem;
+
+            p {
+                font-size: 12px;
+                @include standard-font();
+            }
+        }
+
+        .popup-delayed {
+            background: $tertiary;
+        }
+
+        .task-card {
+            @include flex();
+            @include flex-column();
+            @include standard-card();
+
+
+            justify-content: space-between;
+            align-self: start;
+
+            &:hover {
+                .task-card-popup {
+                    position: absolute;
+                    z-index: 100;
+                }
+
+                .task-card-options {
+                    display: block;
+                    visibility: visible;
+                    transform: scale(1);
+                }
+            }
+
+            @include standard-font();
+
+            p {
+                margin: 0;
+            }
+
+            &-img {
+                border-radius: 0.875rem 0.875rem 0 0;
+                min-height: 12.5rem;
+                object-fit: cover;
+                width: 100%;
+                height: auto;
+            }
+
+            &-title {
+                font-weight: bolder;
+                font-size: 0.875rem;
+                line-height: 1.188rem;
+                color: #414141;
+                padding: 0.625rem 1.125rem 0.313rem 1.125rem;
+            }
+
+            &-description {
+                padding: 0 1.125rem 0.625rem 1.125rem;
+                font-size: 0.75rem;
+                line-height: 1rem;
+                min-height: 2rem;
+                color: #000000;
+            }
+
+            &-deadline {
+                display: flex;
+                align-items: center;
+                padding: 0 1.125rem 0.313rem 1.125rem;
+
+                &-label {
+                    font-size: 0.75rem;
+                    line-height: 1rem;
+                    font-weight: bold;
+                    color: #000000;
+                    margin-right: 0.25rem !important;
+                }
+
+                &-date {
+                    color: $tertiary;
+                    font-weight: bold;
+                }
+
+                &-delayed {
+                    color: $tertiary;
+                    margin-left: .75rem !important;
+                    font-size: 0.625rem;
+                }
+            }
+
+            &-date {
+                padding: 0 1.125rem 1.5rem 1.125rem;
+                font-size: 0.625rem;
+                line-height: 0.875rem;
+                color: #414141;
+            }
+
+
+            &-options {
+                display: none;
+                transform: scale(0);
+                padding: 0 1.125rem 1.125rem 1.125rem;
+                transition: transform .2s ease;
+                font-size: 1rem;
+
+                button {
+                    @include standard-btn();
+                    padding: 1rem 2rem;
+                }
+
+                &-buttons {
+                    @include flex();
+                    @include flex-column();
+                }
+
+                .task-btn-finish {
+                    margin-bottom: 0.5rem;
+                }
+
+                .task-btn-change {                    
+                    @include flex();
+                    @include flex-center();
+                    background-color: $tertiary;
+                    margin-bottom: 0.5rem;
+
+                    span{
+                        @include flex();
+                        margin-right: 1rem;
+                    }
+
+                    &:hover {
+                        background-color: $tertiary-dark;
+                    }
+                }
+
+            }
+        }
+    }
+
+    .newsletter {
+        @include flex();
+        @include flex-center();
+        @include flex-column();
+        @include standard-font();
+        align-items: flex-start;
+        width: 100%;
+        max-width: 50rem;
+        padding: 1.5rem;
+        background-color: $gray;
+        border-radius: 0.5rem;
+
+        p {
+            font-weight: bold;
+            font-size: 0.875rem;
+            line-height: 1.125rem;
+            color: $primary-light;
+            margin: 0 0 1rem 0;
+        }
+
+        form {
+            @include flex();
+            @include flex-row();
+            align-items: flex-end;
+            justify-content: space-around;
+            width: 100%;
+
+            div {
+                @include flex();
+                @include flex-column();
+                width: 100%;
+                margin-right: 1rem;
+
+                label {
+                    font-weight: normal;
+                    font-size: 0.75rem;
+                    line-height: 1rem;
+                    color: $gray-dark;
+                }
+            }
+
+            input {
+                @include standard-font();
+                border-radius: 0.5rem;
+                background: white;
+                height: 2.125rem;
+                border: 0;
+                margin-top: 0.125rem;
+                padding: 0 0 0 1rem;
+                font-size: 0.75rem;
+                line-height: 1rem;
+                text-decoration: none;
+                color: $gray-dark;
+            }
+
+            button {
+                @include standard-font();
+                @include standard-btn();
+                padding: 0 1rem;
+                height: 2.125rem;
+                border-radius: 0.5rem;
+                font-size: 0.875rem;
+            }
+        }
+
+        @include sm {
+            display: none;
+        }
+
+        margin-bottom: 4.375rem;
+    }
+
+    .about {
+        margin-bottom: 1.5rem;
+        @include flex();
+        @include flex-row();
+        align-items: flex-start;
+
+        img {
+            width: 14rem;
+            margin-top: 1.25rem;
+        }
+
+        p {
+            font-size: 0.875rem;
+        }
+
+        @include sm {
+            @include flex-center();
+            @include flex-column();
+
+            img {
+                margin-bottom: 2rem;
+                margin-top: 0;
+                width: 157px;
+            }
+
+            p {
+                font-size: 0.75rem;
+                text-align: center;
+            }
+
+        }
+
+        &-p {
+            margin-left: 1rem;
+            max-width: 45rem;
+
+            @include sm {
+                margin-left: 0;
+            }
+
+        }
+    }
+}
+
+footer {
+    @include flex();
+    @include flex-column();
+    @include flex-center();
+    background-color: $primary;
+    padding: 1.75rem;
+    @include standard-font();
+    margin-top: auto;
+
+    p {
+        margin: 0.25rem;
+        color: white;
+        font-size: 0.75rem;
+        text-align: center;
+    }
+}
