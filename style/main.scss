@@ -94,7 +94,7 @@ $gray: #E5E5E5;
     border-style: solid;
     text-decoration: none;
     transition: all .2s ease;
-    min-height: 22rem;  
+    min-height: 22rem;
 }
 
 /////////////////////////////////////////////////
@@ -463,7 +463,7 @@ body {
                     transition: all .1s ease;
                     font-size: 1rem;
 
-                    @include sm{
+                    @include sm {
                         display: none
                     }
 
@@ -512,6 +512,7 @@ body {
             @include sm {
                 @include flex-row();
                 min-height: 1rem;
+                cursor: initial;
 
                 &__img {
                     border-radius: 0.875rem 0 0 0.875rem;
@@ -546,10 +547,12 @@ body {
 
             @include md {
                 height: 22rem;
+
                 &:hover {
                     height: 30rem;
                     transform: translate3D(0, -1px, 0) scale(1.03);
                     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+
                     .task__card__popup {
                         position: absolute;
                         z-index: 100;

@@ -633,6 +633,7 @@ body {
         -ms-flex-direction: row;
             flex-direction: row;
     min-height: 1rem;
+    cursor: initial;
   }
   .main .tasks .task__card__img {
     border-radius: 0.875rem 0 0 0.875rem;
