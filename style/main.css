@@ -1,9 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans&display=swap");
 body {
-  background-color: white !important;
-  font-family: 'Open Sans', sans-serif !important;
-  margin: 0;
-  min-height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -11,6 +7,10 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  background-color: white !important;
+  font-family: 'Open Sans', sans-serif !important;
+  margin: 0;
+  min-height: 100vh;
 }
 
 @media only screen and (max-width: 40rem) {
@@ -40,7 +40,7 @@ body {
   }
 }
 
-header {
+.header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -58,7 +58,7 @@ header {
           align-items: center;
 }
 
-header img {
+.header__img {
   position: absolute;
   z-index: -1;
   top: 0;
@@ -69,79 +69,78 @@ header img {
 }
 
 @media only screen and (max-width: 40rem) {
-  header img {
+  .header__img {
     height: 12rem;
   }
 }
 
 @media only screen and (min-width: 40rem) {
-  header img {
+  .header__img {
     height: 20rem;
   }
 }
 
 @media only screen and (min-width: 64rem) {
-  header img {
+  .header__img {
     top: -4rem;
     height: 25rem;
   }
 }
 
 @media only screen and (min-width: 80rem) {
-  header img {
+  .header__img {
     top: -10rem;
     height: 32rem;
   }
 }
 
-@media only screen and (max-width: 40rem) {
-  header {
-    padding: 4rem 2rem 0 2rem;
-  }
-}
-
-@media only screen and (min-width: 40rem) {
-  header {
-    padding: 6rem 2rem 4rem 2rem;
-  }
-}
-
-@media only screen and (min-width: 64rem) {
-  header {
-    padding: 6rem 2rem 6rem 2rem;
-  }
-}
-
-header p {
+.header p {
   font-family: 'Open Sans', sans-serif !important;
   font-style: normal;
   font-weight: normal;
   color: white;
   text-align: center;
-  text-align: center;
 }
 
-header .h-title {
+.header__title {
   font-size: 2.25rem;
   font-weight: bolder;
   margin: 0.875rem;
   line-height: 49px;
 }
 
-header .h-subtitle {
+.header__subtitle {
   font-size: 1.125rem;
   margin: 0.875rem;
 }
 
 @media only screen and (max-width: 40rem) {
-  header .h-subtitle {
+  .header__subtitle {
     margin-top: 5rem;
     margin-bottom: 0;
-    color: #422755;
+    color: #422755 !important;
   }
 }
 
-main {
+@media only screen and (max-width: 40rem) {
+  .header {
+    padding: 4rem 2rem 0 2rem;
+  }
+}
+
+@media only screen and (min-width: 40rem) {
+  .header {
+    padding: 6rem 2rem 4rem 2rem;
+  }
+}
+
+@media only screen and (min-width: 64rem) {
+  .header {
+    padding: 6rem 2rem 6rem 2rem;
+  }
+}
+
+.main {
   margin-top: 4.375rem !important;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -161,12 +160,12 @@ main {
 }
 
 @media only screen and (max-width: 40rem) {
-  main {
+  .main {
     margin-top: 2rem !important;
   }
 }
 
-main .search {
+.main .search {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -187,22 +186,7 @@ main .search {
   max-width: 67.5rem;
 }
 
-@media only screen and (max-width: 48rem) {
-  main .search {
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -ms-flex-line-pack: stretch;
-        align-content: stretch;
-    padding: 2rem 1rem;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
-}
-
-main .search form {
+.main .search__search-form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -211,17 +195,7 @@ main .search form {
           align-items: center;
 }
 
-@media only screen and (max-width: 48rem) {
-  main .search form {
-    margin-bottom: 1rem;
-    width: 100%;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-  }
-}
-
-main .search form input {
+.main .search__search-form__input {
   font-family: 'Open Sans', sans-serif !important;
   font-style: normal;
   font-weight: normal;
@@ -236,12 +210,12 @@ main .search form input {
 }
 
 @media only screen and (max-width: 48rem) {
-  main .search form input {
+  .main .search__search-form__input {
     width: 80%;
   }
 }
 
-main .search form button {
+.main .search__search-form__button {
   font-family: 'Open Sans', sans-serif !important;
   font-style: normal;
   font-weight: normal;
@@ -259,18 +233,21 @@ main .search form button {
   font-size: 0.875rem;
 }
 
-main .search form button:hover {
+.main .search__search-form__button:hover {
   background: #422755;
 }
 
-@media only screen and (max-width: 40rem) {
-  main .search {
-    width: calc(100% - 2rem);
-    margin-bottom: 2.5rem !important;
+@media only screen and (max-width: 48rem) {
+  .main .search__search-form {
+    margin-bottom: 1rem;
+    width: 100%;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
 }
 
-main .search-select {
+.main .search__organizar {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -280,16 +257,7 @@ main .search-select {
   font-family: 'Open Sans', sans-serif !important;
 }
 
-@media only screen and (max-width: 48rem) {
-  main .search-select {
-    width: 100%;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-  }
-}
-
-main .search-select label {
+.main .search__organizar__label {
   white-space: nowrap;
   color: white;
   font-size: 0.875rem;
@@ -297,7 +265,7 @@ main .search-select label {
   margin-left: 1rem;
 }
 
-main .search-select select {
+.main .search__organizar__select {
   border-radius: 0.5rem;
   width: 14.625rem;
   height: 2.125rem;
@@ -313,12 +281,43 @@ main .search-select select {
 }
 
 @media only screen and (max-width: 48rem) {
-  main .search-select select {
+  .main .search__organizar__select {
     width: 80%;
   }
 }
 
-main .tasks {
+@media only screen and (max-width: 48rem) {
+  .main .search__organizar {
+    width: 100%;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+@media only screen and (max-width: 48rem) {
+  .main .search {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-line-pack: stretch;
+        align-content: stretch;
+    padding: 2rem 1rem;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+@media only screen and (max-width: 40rem) {
+  .main .search {
+    width: calc(100% - 2rem);
+    margin-bottom: 2.5rem !important;
+  }
+}
+
+.main .tasks {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -337,7 +336,7 @@ main .tasks {
   margin-bottom: 4.375rem;
 }
 
-main .tasks-grid {
+.main .tasks__grid {
   margin-bottom: 3.125rem;
   display: -ms-grid;
   display: grid;
@@ -348,34 +347,34 @@ main .tasks-grid {
 }
 
 @media only screen and (max-width: 40rem) {
-  main .tasks-grid {
+  .main .tasks__grid {
     -ms-grid-columns: (minmax(16rem, 1fr))[1];
         grid-template-columns: repeat(1, minmax(16rem, 1fr));
   }
 }
 
 @media only screen and (min-width: 40rem) {
-  main .tasks-grid {
+  .main .tasks__grid {
     -ms-grid-columns: (minmax(16rem, 1fr))[2];
         grid-template-columns: repeat(2, minmax(16rem, 1fr));
   }
 }
 
 @media only screen and (min-width: 64rem) {
-  main .tasks-grid {
+  .main .tasks__grid {
     -ms-grid-columns: (minmax(16rem, 1fr))[3];
         grid-template-columns: repeat(3, minmax(16rem, 1fr));
   }
 }
 
 @media only screen and (min-width: 80rem) {
-  main .tasks-grid {
+  .main .tasks__grid {
     -ms-grid-columns: (minmax(16rem, 1fr))[4];
         grid-template-columns: repeat(4, minmax(16rem, 1fr));
   }
 }
 
-main .tasks-more {
+.main .tasks__more-task {
   background: #6E4B87;
   border: 0;
   border-radius: 0.5rem;
@@ -387,36 +386,11 @@ main .tasks-more {
   padding: 0.5rem 2.5rem;
 }
 
-main .tasks-more:hover {
+.main .tasks__more-task:hover {
   background: #422755;
 }
 
-main .tasks .task-card-popup {
-  position: absolute;
-  z-index: 100;
-  background: #422755;
-  border: 0;
-  border-radius: 0.5rem;
-  font-weight: bold;
-  color: white;
-  border-radius: 0 .313rem .313rem 0;
-  padding: .5rem .75rem;
-  margin-top: 1rem;
-  margin-left: -.5rem;
-}
-
-main .tasks .task-card-popup p {
-  font-size: 12px;
-  font-family: 'Open Sans', sans-serif !important;
-  font-style: normal;
-  font-weight: normal;
-}
-
-main .tasks .popup-delayed {
-  background: #F04837;
-}
-
-main .tasks .task-card {
+.main .tasks .task__card {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -448,30 +422,42 @@ main .tasks .task-card {
 }
 
 @media only screen and (min-width: 40rem) {
-  main .tasks .task-card:hover {
+  .main .tasks .task__card:hover {
     -webkit-box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
   }
 }
 
-@media only screen and (min-width: 40rem) {
-  main .tasks .task-card:hover .task-card-popup {
-    position: absolute;
-    z-index: 100;
-  }
-  main .tasks .task-card:hover .task-card-options {
-    display: block;
-    visibility: visible;
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
+.main .tasks .task__card__popup {
+  position: absolute;
+  z-index: 100;
+  background: #422755;
+  border: 0;
+  border-radius: 0.5rem;
+  font-weight: bold;
+  color: white;
+  border-radius: 0 .313rem .313rem 0;
+  padding: .5rem .75rem;
+  margin-top: 1rem;
+  margin-left: -.5rem;
 }
 
-main .tasks .task-card p {
+.main .tasks .task__card__popup p {
+  font-size: 12px;
+  font-family: 'Open Sans', sans-serif !important;
+  font-style: normal;
+  font-weight: normal;
+}
+
+.main .tasks .task__card__popup--delayed {
+  background: #F04837;
+}
+
+.main .tasks .task__card p {
   margin: 0;
 }
 
-main .tasks .task-card-img {
+.main .tasks .task__card__img {
   border-radius: 0.875rem 0.875rem 0 0;
   min-height: 12.5rem;
   -o-object-fit: cover;
@@ -480,15 +466,7 @@ main .tasks .task-card-img {
   height: auto;
 }
 
-main .tasks .task-card-title {
-  font-weight: bolder;
-  font-size: 0.875rem;
-  line-height: 1.188rem;
-  color: #414141;
-  padding: 0.625rem 1.125rem 0.313rem 1.125rem;
-}
-
-main .tasks .task-card-info {
+.main .tasks .task__card__info {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -498,7 +476,52 @@ main .tasks .task-card-info {
           flex-direction: column;
 }
 
-main .tasks .task-card .task-btn-finish-mobile {
+.main .tasks .task__card__info__title {
+  font-weight: bolder;
+  font-size: 0.875rem;
+  line-height: 1.188rem;
+  color: #414141;
+  padding: 0.625rem 1.125rem 0.313rem 1.125rem;
+}
+
+.main .tasks .task__card__info__description {
+  padding: 0 1.125rem 0.625rem 1.125rem;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  min-height: 2rem;
+  color: #000000;
+}
+
+.main .tasks .task__card__info__deadline {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 1.125rem 0.313rem 1.125rem;
+}
+
+.main .tasks .task__card__info__deadline__label {
+  font-size: 0.75rem;
+  line-height: 1rem;
+  font-weight: bold;
+  color: #000000;
+  margin-right: 0.25rem !important;
+}
+
+.main .tasks .task__card__info__deadline__date {
+  color: #F04837;
+  font-weight: bold;
+}
+
+.main .tasks .task__card__info__deadline__delayed {
+  color: #F04837;
+  margin-left: .75rem !important;
+  font-size: 0.625rem;
+}
+
+.main .tasks .task__card__info__btn--finish-mobile {
   display: none;
   margin: 0 1.125rem 0.625rem 1.125rem;
   background: #6E4B87;
@@ -517,68 +540,22 @@ main .tasks .task-card .task-btn-finish-mobile {
   border-color: #422755;
 }
 
-main .tasks .task-card .task-btn-finish-mobile:hover {
+.main .tasks .task__card__info__btn--finish-mobile:hover {
   background: #422755;
 }
 
-main .tasks .task-card .task-btn-finish-mobile:hover {
+.main .tasks .task__card__info__btn--finish-mobile:hover {
   color: white;
 }
 
-main .tasks .task-card .card-clock {
-  display: none;
-  position: absolute;
-  right: 0;
-  top: 0;
-  margin-right: 1rem;
-  margin-top: 1rem;
-}
-
-main .tasks .task-card-description {
-  padding: 0 1.125rem 0.625rem 1.125rem;
-  font-size: 0.75rem;
-  line-height: 1rem;
-  min-height: 2rem;
-  color: #000000;
-}
-
-main .tasks .task-card-deadline {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  padding: 0 1.125rem 0.313rem 1.125rem;
-}
-
-main .tasks .task-card-deadline-label {
-  font-size: 0.75rem;
-  line-height: 1rem;
-  font-weight: bold;
-  color: #000000;
-  margin-right: 0.25rem !important;
-}
-
-main .tasks .task-card-deadline-date {
-  color: #F04837;
-  font-weight: bold;
-}
-
-main .tasks .task-card-deadline-delayed {
-  color: #F04837;
-  margin-left: .75rem !important;
-  font-size: 0.625rem;
-}
-
-main .tasks .task-card-date {
+.main .tasks .task__card__info__date {
   padding: 0 1.125rem 1.5rem 1.125rem;
   font-size: 0.625rem;
   line-height: 0.875rem;
   color: #414141;
 }
 
-main .tasks .task-card-options {
+.main .tasks .task__card__info__options {
   display: none;
   -webkit-transform: scale(0);
           transform: scale(0);
@@ -590,7 +567,7 @@ main .tasks .task-card-options {
   font-size: 1rem;
 }
 
-main .tasks .task-card-options button {
+.main .tasks .task__card__info__options button {
   background: #6E4B87;
   border: 0;
   border-radius: 0.5rem;
@@ -602,11 +579,11 @@ main .tasks .task-card-options button {
   padding: 1rem 2rem;
 }
 
-main .tasks .task-card-options button:hover {
+.main .tasks .task__card__info__options button:hover {
   background: #422755;
 }
 
-main .tasks .task-card-options-buttons {
+.main .tasks .task__card__info__options__buttons {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -616,11 +593,11 @@ main .tasks .task-card-options-buttons {
           flex-direction: column;
 }
 
-main .tasks .task-card-options .task-btn-finish {
+.main .tasks .task__card__info__options__buttons__finish {
   margin-bottom: 0.5rem;
 }
 
-main .tasks .task-card-options .task-btn-change {
+.main .tasks .task__card__info__options__buttons__change {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -632,55 +609,77 @@ main .tasks .task-card-options .task-btn-change {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: #F04837;
+  background-color: #F04837 !important;
   margin-bottom: 0.5rem;
 }
 
-main .tasks .task-card-options .task-btn-change span {
+.main .tasks .task__card__info__options__buttons__change span {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   margin-right: 1rem;
 }
 
-main .tasks .task-card-options .task-btn-change:hover {
-  background-color: #9b2a1e;
+.main .tasks .task__card__info__options__buttons__change:hover {
+  background-color: #9b2a1e !important;
+}
+
+.main .tasks .task__card__info__clock--mobile {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin-right: 1rem;
+  margin-top: 1rem;
 }
 
 @media only screen and (max-width: 40rem) {
-  main .tasks .task-card {
+  .main .tasks .task__card {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
     min-height: 1rem;
   }
-  main .tasks .task-card-img {
+  .main .tasks .task__card__img {
     border-radius: 0.875rem 0 0 0.875rem;
     min-height: .5rem;
     width: 40% !important;
   }
-  main .tasks .task-card-description {
-    font-size: .688rem;
+  .main .tasks .task__card__info {
+    position: relative;
   }
-  main .tasks .task-card .task-btn-finish-mobile {
-    display: block;
-  }
-  main .tasks .task-card-date {
-    padding-bottom: 1.125rem;
-  }
-  main .tasks .task-card-title {
+  .main .tasks .task__card__info__title {
     padding-top: 1.125rem;
   }
-  main .tasks .task-card .card-clock {
+  .main .tasks .task__card__info__description {
+    font-size: .688rem;
+  }
+  .main .tasks .task__card__info__btn--finish-mobile {
     display: block;
   }
-  main .tasks .task-card .task-card-info {
-    position: relative;
+  .main .tasks .task__card__info__date {
+    padding-bottom: 1.125rem;
+  }
+  .main .tasks .task__card__info__clock--mobile {
+    display: block !important;
   }
 }
 
-main .newsletter {
+@media only screen and (min-width: 40rem) {
+  .main .tasks .task__card:hover .task__card__popup {
+    position: absolute;
+    z-index: 100;
+  }
+  .main .tasks .task__card:hover .task__card__info__options {
+    display: block;
+    visibility: visible;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+.main .newsletter {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -710,7 +709,7 @@ main .newsletter {
   margin-bottom: 4.375rem;
 }
 
-main .newsletter p {
+.main .newsletter__title {
   font-weight: bold;
   font-size: 0.875rem;
   line-height: 1.125rem;
@@ -718,7 +717,7 @@ main .newsletter p {
   margin: 0 0 1rem 0;
 }
 
-main .newsletter form {
+.main .newsletter__form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -734,7 +733,7 @@ main .newsletter form {
   width: 100%;
 }
 
-main .newsletter form div {
+.main .newsletter__form__section {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -746,14 +745,14 @@ main .newsletter form div {
   margin-right: 1rem;
 }
 
-main .newsletter form div label {
+.main .newsletter__form__section__label {
   font-weight: normal;
   font-size: 0.75rem;
   line-height: 1rem;
   color: #757575;
 }
 
-main .newsletter form input {
+.main .newsletter__form__section__input {
   font-family: 'Open Sans', sans-serif !important;
   font-style: normal;
   font-weight: normal;
@@ -769,7 +768,7 @@ main .newsletter form input {
   color: #757575;
 }
 
-main .newsletter form button {
+.main .newsletter__form__button {
   font-family: 'Open Sans', sans-serif !important;
   font-style: normal;
   font-weight: normal;
@@ -787,18 +786,17 @@ main .newsletter form button {
   font-size: 0.875rem;
 }
 
-main .newsletter form button:hover {
+.main .newsletter__form__button:hover {
   background: #422755;
 }
 
 @media only screen and (max-width: 40rem) {
-  main .newsletter {
+  .main .newsletter {
     display: none;
   }
 }
 
-main .about {
-  margin-bottom: 1.5rem;
+.main .about {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -809,19 +807,31 @@ main .about {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
+  margin-bottom: 1.5rem;
 }
 
-main .about img {
+.main .about__img {
   width: 14rem;
   margin-top: 1.25rem;
 }
 
-main .about p {
+.main .about__text {
+  margin-left: 1rem;
+  max-width: 45rem;
+}
+
+.main .about__text__p {
   font-size: 0.875rem;
 }
 
 @media only screen and (max-width: 40rem) {
-  main .about {
+  .main .about__text {
+    margin-left: 0;
+  }
+}
+
+@media only screen and (max-width: 40rem) {
+  .main .about {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
@@ -835,29 +845,18 @@ main .about p {
         -ms-flex-direction: column;
             flex-direction: column;
   }
-  main .about img {
+  .main .about__img {
     margin-bottom: 2rem;
     margin-top: 0;
     width: 157px;
   }
-  main .about p {
+  .main .about__text__p {
     font-size: 0.75rem;
     text-align: center;
   }
 }
 
-main .about-p {
-  margin-left: 1rem;
-  max-width: 45rem;
-}
-
-@media only screen and (max-width: 40rem) {
-  main .about-p {
-    margin-left: 0;
-  }
-}
-
-footer {
+.footer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -873,15 +872,15 @@ footer {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: #422755;
-  padding: 1.75rem;
   font-family: 'Open Sans', sans-serif !important;
   font-style: normal;
   font-weight: normal;
+  background-color: #422755;
+  padding: 1.75rem;
   margin-top: auto;
 }
 
-footer p {
+.footer__p {
   margin: 0.25rem;
   color: white;
   font-size: 0.75rem;

@@ -1,153 +1,333 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang='pt-BR'>
 
 <head>
     <!--Metas-->
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="Fernando R.">
-    <meta name="description" content="Linx challenge for the position of web designer.">
-    <meta name="keywords" content="Linx, Web Design, HTML, CSS, SCSS, SASS">
-    <meta name="theme-color" content="#021126">
-    <meta name="title" content="Linx Challenge | Web Design 2021">
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <meta name='author' content='Fernando R.'>
+    <meta name='description' content='Linx challenge for the position of web designer.'>
+    <meta name='keywords' content='Linx, Web Design, HTML, CSS, SCSS, SASS'>
+    <meta name='theme-color' content='#021126'>
+    <meta name='title' content='Linx Challenge | Web Design 2021'>
     <!--Icons-->
-    <link rel="icon" type="image/png" sizes="192x192"
-        href="https://www.linx.com.br/app/themes/linx/webpack/dist/images/favicons/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="96x96"
-        href="https://www.linx.com.br/app/themes/linx/webpack/dist/images/favicons/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="32x32"
-        href="https://www.linx.com.br/app/themes/linx/webpack/dist/images/favicons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16"
-        href="https://www.linx.com.br/app/themes/linx/webpack/dist/images/favicons/favicon-16x16.png">
+    <link rel='icon' type='image/png' sizes='192x192'
+        href='https://www.linx.com.br/app/themes/linx/webpack/dist/images/favicons/android-icon-192x192.png'>
+    <link rel='icon' type='image/png' sizes='96x96'
+        href='https://www.linx.com.br/app/themes/linx/webpack/dist/images/favicons/favicon-96x96.png'>
+    <link rel='icon' type='image/png' sizes='32x32'
+        href='https://www.linx.com.br/app/themes/linx/webpack/dist/images/favicons/favicon-32x32.png'>
+    <link rel='icon' type='image/png' sizes='16x16'
+        href='https://www.linx.com.br/app/themes/linx/webpack/dist/images/favicons/favicon-16x16.png'>
     <!--Title-->
     <title>Linx Challenge | Web Design 2021</title>
     <!--Preloads-->
-    <link rel="preload" href="./style/main.css" as="style">
+    <link rel='preload' href='./style/main.css' as='style'>
     <!--Styles-->
-    <link href="./style/main.css" rel="stylesheet">
+    <link href='./style/main.css' rel='stylesheet'>
 </head>
 
 <body>
-    <header>
-        <img src="./assets/images/header.svg" alt="">
-        <p class="h-title">Tarefas a fazer</p>
-        <p class="h-subtitle">Adicione e complete tarefas para organizar melhor a sua semana. :)</p>
+    <header class='header'>
+        <img class='header__img' src='./assets/images/header.svg' alt=''>
+        <p class='header__title'>Tarefas a fazer</p>
+        <p class='header__subtitle'>Adicione e complete tarefas para organizar melhor a sua semana. :)</p>
     </header>
-    <main class="container">
-        <section class="search">
-            <form>
-                <input placeholder="Busque tarefas" id="search-task">
-                <button aria-label="Send information" type="submit">Buscar</button>
+    <main class='main container'>
+        <section class='search'>
+            <form class='search__search-form'>
+                <input class='search__search-form__input' placeholder='Busque tarefas' id='search-task'>
+                <button class='search__search-form__button' aria-label='Send information' type='submit'>Buscar</button>
             </form>
-            <div class="search-select">
-                <label for="select-task">Organizar por: </label>
-                <select id="select-task">
-                    <option value="Prazo">Prazo</option>
-                    <option value="Prazo">Atrasado</option>
+            <div class='search__organizar'>
+                <label class='search__organizar__label' for='search__organizar__select'>Organizar por: </label>
+                <select class='search__organizar__select' id='search__organizar__select'>
+                    <option value='Prazo'>Prazo</option>
+                    <option value='Prazo'>Atrasado</option>
                 </select>
             </div>
         </section>
-        <section class="tasks">
-            <div class="tasks-grid">
-                <div class="task-card">
-                    <div class="task-card-popup">
-                        <p>Prazo Curto!</p>                   
-                    </div>                
-                    <img class="task-card-img" src="./assets/images/task-placeholder.jpg" alt="">
-                    <div class="task-card-info"> 
-                        <div class="card-clock">
-                            <img src="./assets/images/clock-icon-red.svg" width="20px" alt="">
-                        </div>                       
-                        <p class="task-card-title">Nome da tarefa</p>
-                        <p class="task-card-description">Descrição da tarefa, o que deve ser feito e muitas informações
+        <section class='tasks'>
+            <div class='tasks__grid'>
+                <div class='task__card'>
+                    <div class='task__card__popup'>
+                        <p>Prazo Curto!</p>
+                    </div>
+                    <img class='task__card__img' src='./assets/images/task-placeholder.svg' alt='card-img'>
+                    <div class='task__card__info'>
+                        <div class='task__card__info__clock--mobile'>
+                            <img src='./assets/images/clock-icon-red.svg' width='20px' alt=''>
+                        </div>
+                        <p class='task__card__info__title'>Nome da tarefa</p>
+                        <p class='task__card__info__description'>Descrição da tarefa, o que deve ser feito e muitas
+                            informações
                             que
                             explicam
                             melhor do que se trata.</p>
-                        <div class="task-card-deadline">
-                            <p class="task-card-deadline-label">Prazo:</p>
-                            <p class="task-card-deadline-date">00/00</p>
+                        <div class='task__card__info__deadline'>
+                            <p class='task__card__info__deadline__label'>Prazo:</p>
+                            <p class='task__card__info__deadline__date'>00/00</p>
                         </div>
-                        <button class="task-btn-finish-mobile">Concluir</button>
-                        <p class="task-card-date">Data de inclusão: há 2 semanas</p>
-                        <div class="task-card-options">                        
-                            <div class="task-card-options-buttons">
-                                <button class="task-btn-finish">Concluir</button>
-                                <button class="task-btn-change"><span><img src="./assets/images/clock-icon.svg"
-                                            width="20px" alt=""></span> Alterar prazo</button>
+                        <button class='task__card__info__btn--finish-mobile'>Concluir</button>
+                        <p class='task__card__info__date'>Data de inclusão: há 2 semanas</p>
+                        <div class='task__card__info__options'>
+                            <div class='task__card__info__options__buttons'>
+                                <button class='task__card__info__options__buttons__finish'>Concluir</button>
+                                <button class='task__card__info__options__buttons__change'><span><img
+                                            src='./assets/images/clock-icon.svg' width='20px' alt=''></span> Alterar
+                                    prazo</button>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="task-card">
-                    <div class="task-card-popup popup-delayed">
-                        <p>Atrasado :(</p>
-                    </div>
-                    <img class="task-card-img" src="./assets/images/task-placeholder.jpg" alt="">
-                    <div class="task-card-info">
-                        <p class="task-card-title">Nome da tarefa</p>
-                        <p class="task-card-description">Descrição da tarefa, o que deve ser feito e muitas informações
+                <div class='task__card'>
+                    <img class='task__card__img' src='./assets/images/task-placeholder.svg' alt='card-img'>
+                    <div class='task__card__info'>
+                        <div class='task__card__info__clock--mobile'>
+                            <img src='./assets/images/clock-icon-red.svg' width='20px' alt=''>
+                        </div>
+                        <p class='task__card__info__title'>Nome da tarefa</p>
+                        <p class='task__card__info__description'>Descrição da tarefa, o que deve ser feito e muitas
+                            informações
                             que
                             explicam
                             melhor do que se trata.</p>
-                        <div class="task-card-deadline">
-                            <p class="task-card-deadline-label">Prazo:</p>
-                            <p class="task-card-deadline-date">00/00</p>
-                            <p class="task-card-deadline-delayed">Atraso: 3 dias</p>
+                        <div class='task__card__info__deadline'>
+                            <p class='task__card__info__deadline__label'>Prazo:</p>
+                            <p class='task__card__info__deadline__date'>00/00</p>
                         </div>
-                        <button class="task-btn-finish-mobile">Concluir</button>
-                        <p class="task-card-date">Data de inclusão: há 2 semanas</p>
-                        <div class="task-card-options">
-                            <div class="task-card-options-buttons">
-                                <button class="task-btn-finish">Concluir</button>
-                                <button class="task-btn-change"><span><img src="./assets/images/clock-icon.svg"
-                                            width="20px" alt=""></span> Alterar prazo</button>
+                        <button class='task__card__info__btn--finish-mobile'>Concluir</button>
+                        <p class='task__card__info__date'>Data de inclusão: há 2 semanas</p>
+                        <div class='task__card__info__options'>
+                            <div class='task__card__info__options__buttons'>
+                                <button class='task__card__info__options__buttons__finish'>Concluir</button>
+                                <button class='task__card__info__options__buttons__change'><span><img
+                                            src='./assets/images/clock-icon.svg' width='20px' alt=''></span> Alterar
+                                    prazo</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class='task__card'>
+                    <img class='task__card__img' src='./assets/images/task-placeholder.svg' alt='card-img'>
+                    <div class='task__card__info'>
+                        <div class='task__card__info__clock--mobile'>
+                            <img src='./assets/images/clock-icon-red.svg' width='20px' alt=''>
+                        </div>
+                        <p class='task__card__info__title'>Nome da tarefa</p>
+                        <p class='task__card__info__description'>Descrição da tarefa, o que deve ser feito e muitas
+                            informações
+                            que
+                            explicam
+                            melhor do que se trata.</p>
+                        <div class='task__card__info__deadline'>
+                            <p class='task__card__info__deadline__label'>Prazo:</p>
+                            <p class='task__card__info__deadline__date'>00/00</p>
+                        </div>
+                        <button class='task__card__info__btn--finish-mobile'>Concluir</button>
+                        <p class='task__card__info__date'>Data de inclusão: há 2 semanas</p>
+                        <div class='task__card__info__options'>
+                            <div class='task__card__info__options__buttons'>
+                                <button class='task__card__info__options__buttons__finish'>Concluir</button>
+                                <button class='task__card__info__options__buttons__change'><span><img
+                                            src='./assets/images/clock-icon.svg' width='20px' alt=''></span> Alterar
+                                    prazo</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class='task__card'>
+                    <img class='task__card__img' src='./assets/images/task-placeholder.svg' alt='card-img'>
+                    <div class='task__card__info'>
+                        <div class='task__card__info__clock--mobile'>
+                            <img src='./assets/images/clock-icon-red.svg' width='20px' alt=''>
+                        </div>
+                        <p class='task__card__info__title'>Nome da tarefa</p>
+                        <p class='task__card__info__description'>Descrição da tarefa, o que deve ser feito e muitas
+                            informações
+                            que
+                            explicam
+                            melhor do que se trata.</p>
+                        <div class='task__card__info__deadline'>
+                            <p class='task__card__info__deadline__label'>Prazo:</p>
+                            <p class='task__card__info__deadline__date'>00/00</p>
+                        </div>
+                        <button class='task__card__info__btn--finish-mobile'>Concluir</button>
+                        <p class='task__card__info__date'>Data de inclusão: há 2 semanas</p>
+                        <div class='task__card__info__options'>
+                            <div class='task__card__info__options__buttons'>
+                                <button class='task__card__info__options__buttons__finish'>Concluir</button>
+                                <button class='task__card__info__options__buttons__change'><span><img
+                                            src='./assets/images/clock-icon.svg' width='20px' alt=''></span> Alterar
+                                    prazo</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class='task__card'>
+                    <img class='task__card__img' src='./assets/images/task-placeholder.svg' alt='card-img'>
+                    <div class='task__card__info'>
+                        <div class='task__card__info__clock--mobile'>
+                            <img src='./assets/images/clock-icon-red.svg' width='20px' alt=''>
+                        </div>
+                        <p class='task__card__info__title'>Nome da tarefa</p>
+                        <p class='task__card__info__description'>Descrição da tarefa, o que deve ser feito e muitas
+                            informações
+                            que
+                            explicam
+                            melhor do que se trata.</p>
+                        <div class='task__card__info__deadline'>
+                            <p class='task__card__info__deadline__label'>Prazo:</p>
+                            <p class='task__card__info__deadline__date'>00/00</p>
+                        </div>
+                        <button class='task__card__info__btn--finish-mobile'>Concluir</button>
+                        <p class='task__card__info__date'>Data de inclusão: há 2 semanas</p>
+                        <div class='task__card__info__options'>
+                            <div class='task__card__info__options__buttons'>
+                                <button class='task__card__info__options__buttons__finish'>Concluir</button>
+                                <button class='task__card__info__options__buttons__change'><span><img
+                                            src='./assets/images/clock-icon.svg' width='20px' alt=''></span> Alterar
+                                    prazo</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class='task__card'>
+                    <img class='task__card__img' src='./assets/images/task-placeholder.svg' alt='card-img'>
+                    <div class='task__card__info'>
+                        <div class='task__card__info__clock--mobile'>
+                            <img src='./assets/images/clock-icon-red.svg' width='20px' alt=''>
+                        </div>
+                        <p class='task__card__info__title'>Nome da tarefa</p>
+                        <p class='task__card__info__description'>Descrição da tarefa, o que deve ser feito e muitas
+                            informações
+                            que
+                            explicam
+                            melhor do que se trata.</p>
+                        <div class='task__card__info__deadline'>
+                            <p class='task__card__info__deadline__label'>Prazo:</p>
+                            <p class='task__card__info__deadline__date'>00/00</p>
+                        </div>
+                        <button class='task__card__info__btn--finish-mobile'>Concluir</button>
+                        <p class='task__card__info__date'>Data de inclusão: há 2 semanas</p>
+                        <div class='task__card__info__options'>
+                            <div class='task__card__info__options__buttons'>
+                                <button class='task__card__info__options__buttons__finish'>Concluir</button>
+                                <button class='task__card__info__options__buttons__change'><span><img
+                                            src='./assets/images/clock-icon.svg' width='20px' alt=''></span> Alterar
+                                    prazo</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class='task__card'>
+                    <div class='task__card__popup task__card__popup--delayed'>
+                        <p>Atrasado :(</p>
+                    </div>
+                    <img class='task__card__img' src='./assets/images/task-placeholder.svg' alt='card-img'>
+                    <div class='task__card__info'>
+                        <div class='task__card__info__clock--mobile'>
+                            <img src='./assets/images/clock-icon-red.svg' width='20px' alt=''>
+                        </div>
+                        <p class='task__card__info__title'>Nome da tarefa</p>
+                        <p class='task__card__info__description'>Descrição da tarefa, o que deve ser feito e muitas
+                            informações
+                            que
+                            explicam
+                            melhor do que se trata.</p>
+                        <div class='task__card__info__deadline'>
+                            <p class='task__card__info__deadline__label'>Prazo:</p>
+                            <p class='task__card__info__deadline__date'>00/00</p>
+                            <p class='task__card__info__deadline__delayed'>Atraso: 3 dias</p>
+                        </div>
+                        <button class='task__card__info__btn--finish-mobile'>Concluir</button>
+                        <p class='task__card__info__date'>Data de inclusão: há 2 semanas</p>
+                        <div class='task__card__info__options'>
+                            <div class='task__card__info__options__buttons'>
+                                <button class='task__card__info__options__buttons__finish'>Concluir</button>
+                                <button class='task__card__info__options__buttons__change'><span><img
+                                            src='./assets/images/clock-icon.svg' width='20px' alt=''></span> Alterar
+                                    prazo</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class='task__card'>
+                    <img class='task__card__img' src='./assets/images/task-placeholder.svg' alt='card-img'>
+                    <div class='task__card__info'>
+                        <div class='task__card__info__clock--mobile'>
+                            <img src='./assets/images/clock-icon-red.svg' width='20px' alt=''>
+                        </div>
+                        <p class='task__card__info__title'>Nome da tarefa</p>
+                        <p class='task__card__info__description'>Descrição da tarefa, o que deve ser feito e muitas
+                            informações
+                            que
+                            explicam
+                            melhor do que se trata.</p>
+                        <div class='task__card__info__deadline'>
+                            <p class='task__card__info__deadline__label'>Prazo:</p>
+                            <p class='task__card__info__deadline__date'>00/00</p>
+                        </div>
+                        <button class='task__card__info__btn--finish-mobile'>Concluir</button>
+                        <p class='task__card__info__date'>Data de inclusão: há 2 semanas</p>
+                        <div class='task__card__info__options'>
+                            <div class='task__card__info__options__buttons'>
+                                <button class='task__card__info__options__buttons__finish'>Concluir</button>
+                                <button class='task__card__info__options__buttons__change'><span><img
+                                            src='./assets/images/clock-icon.svg' width='20px' alt=''></span> Alterar
+                                    prazo</button>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <button class="tasks-more" aria-label="Send information" type="submit">VER MAIS</button>
+            <button class='tasks__more-task' aria-label='Send information' type='submit'>VER MAIS</button>
         </section>
-        <section class="newsletter">
-            <p>Quer receber dicas para organizar melhor a sua rotina? Cadastre-se!</p>
-            <form>
-                <div>
-                    <label for="newsletter-name">nome</label>
-                    <input placeholder="Digite seu nome" class="newsletter-name">
+        <section class='newsletter'>
+            <p class='newsletter__title'>Quer receber dicas para organizar melhor a sua rotina? Cadastre-se!</p>
+            <form class='newsletter__form'>
+                <div class='newsletter__form__section'>
+                    <label class='newsletter__form__section__label' for='newsletter-name'>nome</label>
+                    <input class='newsletter__form__section__input' placeholder='Digite seu nome'
+                        class='newsletter-name'>
                 </div>
-                <div>
-                    <label for="newsletter-email">e-mail</label>
-                    <input placeholder="Digite seu e-mail" class="newsletter-email">
+                <div class='newsletter__form__section'>
+                    <label class='newsletter__form__section__label' for='newsletter-email'>e-mail</label>
+                    <input class='newsletter__form__section__input' placeholder='Digite seu e-mail'
+                        class='newsletter-email'>
                 </div>
-                <button aria-label="Send information" type="submit">Cadastrar</button>
+                <button class='newsletter__form__button' aria-label='Send information' type='submit'>Cadastrar</button>
             </form>
         </section>
-        <section class="about">
-            <img src="assets/images/linx-logo.png" alt="linx logo">
-            <div class="about-p">
-                <p>A Linx é uma empresa brasileira especialista em tecnologia para o varejo. Líder no mercado de
+        <section class='about'>
+            <img class='about__img' src='assets/images/linx-logo.png' alt='linx logo'>
+            <div class='about__text'>
+                <p class='about__text__p'>A Linx é uma empresa brasileira especialista em tecnologia para o varejo.
+                    Líder no mercado de
                     software de
                     gestão, com 45,6% de market share do mercado varejista, conforme atesta o IDC.
                 </p>
-                <p>Toda a expertise da Linx na jornada de compra é transformada em insights fundamentais para atingir o
+                <p class='about__text__p'>Toda a expertise da Linx na jornada de compra é transformada em insights
+                    fundamentais para atingir o
                     que
                     os varejistas mais esperam: fidelizar seus consumidores e atingir resultados concretos e relevantes.
                 </p>
-                <p>Com capital aberto na B3 desde 2013, a Linx também se tornou a primeira empresa brasileira de
+                <p class='about__text__p'>Com capital aberto na B3 desde 2013, a Linx também se tornou a primeira
+                    empresa brasileira de
                     software
                     com capital aberto na NYSE, em 2019. A empresa possui mais de 3,5 mil colaboradores distribuídos
                     entre
                     sua sede em São Paulo, 15 filiais pelo Brasil e 5 países da América. Para saber mais, acesse
-                    <a href="https://linx.com.br/imprensa" target="_blank" rel="noopener">linx.com.br/imprensa</a>.
+                    <a href='https://linx.com.br/imprensa' target='_blank' rel='noopener'>linx.com.br/imprensa</a>.
                 </p>
             </div>
         </section>
     </main>
-    <footer>
-        <p>Testando suas habilidades em HTML e CSS.</p>
-        <p>Linx Impulse 2021</p>
-        <p>Teste ficcional!</p>
+    <footer class='footer'>
+        <p class='footer__p'>Testando suas habilidades em HTML e CSS.</p>
+        <p class='footer__p'>Linx Impulse 2021</p>
+        <p class='footer__p'>Teste ficcional!</p>
     </footer>
 </body>
 
