@@ -1,9 +1,10 @@
-# Linx Desafio | Webdesigner
+# Linx Challenge | Webdesigner
 
 The challenge is to develop a responsive page based on the desktop and mobile layouts provided.  
 
 [Provided design](https://www.figma.com/file/iR9UNO7MzXntlVqYyJPGsb/Testes-Webdesign-2021-Candidato?node-id=1267%3A0)
 
+[Final result](https://linx-challenge-webdesign.web.app/)
 
 ### 💻 Technologies used 
 1. HTML
@@ -18,7 +19,7 @@ The challenge is to develop a responsive page based on the desktop and mobile la
 5. Live Sass Compiler
 6. BEM Naming Convention
 
-To run the project you must open the index.html file
+To run the project you must open the index.html file or [here is the final result](https://linx-challenge-webdesign.web.app/)
 
 ### 👨‍💻 Author
   
