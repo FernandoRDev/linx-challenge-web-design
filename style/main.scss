@@ -92,17 +92,9 @@ $gray: #E5E5E5;
     border-color: rgba(0, 0, 0, 0.2);
     border-width: 0.063rem;
     border-style: solid;
-    overflow: hidden;
     text-decoration: none;
-    transition: transform .2s ease;
-    min-height: 22rem;
-
-    @include md {
-        &:hover {
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-        }
-    }
-
+    transition: all .2s ease;
+    min-height: 22rem;  
 }
 
 /////////////////////////////////////////////////
@@ -465,11 +457,14 @@ body {
                 }
 
                 &__options {
-                    display: none;
-                    transform: scale(0);
+                    opacity: 0;
                     padding: 0 1.125rem 1.125rem 1.125rem;
-                    transition: transform .2s ease;
+                    transition: all .1s ease;
                     font-size: 1rem;
+
+                    @include sm{
+                        display: none
+                    }
 
                     button {
                         @include standard-btn();
@@ -549,16 +544,18 @@ body {
             }
 
             @include md {
+                height: 22rem;
                 &:hover {
+                    height: 30rem;
+                    transform: translate3D(0, -1px, 0) scale(1.03);
+                    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
                     .task__card__popup {
                         position: absolute;
                         z-index: 100;
                     }
 
                     .task__card__info__options {
-                        display: block;
-                        visibility: visible;
-                        transform: scale(1);
+                        opacity: 1;
                     }
                 }
             }

@@ -404,12 +404,9 @@ body {
   border-color: rgba(0, 0, 0, 0.2);
   border-width: 0.063rem;
   border-style: solid;
-  overflow: hidden;
   text-decoration: none;
-  -webkit-transition: -webkit-transform .2s ease;
-  transition: -webkit-transform .2s ease;
-  transition: transform .2s ease;
-  transition: transform .2s ease, -webkit-transform .2s ease;
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
   min-height: 22rem;
   font-family: 'Open Sans', sans-serif !important;
   font-style: normal;
@@ -419,13 +416,6 @@ body {
           justify-content: space-between;
   -ms-flex-item-align: start;
       align-self: start;
-}
-
-@media only screen and (min-width: 40rem) {
-  .main .tasks .task__card:hover {
-    -webkit-box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-  }
 }
 
 .main .tasks .task__card__popup {
@@ -556,15 +546,17 @@ body {
 }
 
 .main .tasks .task__card__info__options {
-  display: none;
-  -webkit-transform: scale(0);
-          transform: scale(0);
+  opacity: 0;
   padding: 0 1.125rem 1.125rem 1.125rem;
-  -webkit-transition: -webkit-transform .2s ease;
-  transition: -webkit-transform .2s ease;
-  transition: transform .2s ease;
-  transition: transform .2s ease, -webkit-transform .2s ease;
+  -webkit-transition: all .1s ease;
+  transition: all .1s ease;
   font-size: 1rem;
+}
+
+@media only screen and (max-width: 40rem) {
+  .main .tasks .task__card__info__options {
+    display: none;
+  }
 }
 
 .main .tasks .task__card__info__options button {
@@ -667,15 +659,22 @@ body {
 }
 
 @media only screen and (min-width: 40rem) {
+  .main .tasks .task__card {
+    height: 22rem;
+  }
+  .main .tasks .task__card:hover {
+    height: 30rem;
+    -webkit-transform: translate3D(0, -1px, 0) scale(1.03);
+            transform: translate3D(0, -1px, 0) scale(1.03);
+    -webkit-box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  }
   .main .tasks .task__card:hover .task__card__popup {
     position: absolute;
     z-index: 100;
   }
   .main .tasks .task__card:hover .task__card__info__options {
-    display: block;
-    visibility: visible;
-    -webkit-transform: scale(1);
-            transform: scale(1);
+    opacity: 1;
   }
 }
 
