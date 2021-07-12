@@ -1,5 +1,7 @@
 # Linx Challenge | Webdesigner
 
+### 🖥 About
+
 The challenge is to develop a responsive page based on the desktop and mobile layouts provided.  
 
 [Provided design](https://www.figma.com/file/iR9UNO7MzXntlVqYyJPGsb/Testes-Webdesign-2021-Candidato?node-id=1267%3A0)
