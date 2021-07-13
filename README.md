@@ -23,7 +23,7 @@ The challenge is to develop a responsive page based on the desktop and mobile la
 5. Live Sass Compiler
 6. BEM Naming Convention
 
-### 👀 how to see the project?
+### 👀 How can I see the project?
 
 To run the project you must download it and open the index.html file or you can see online [here](https://linx-challenge-webdesign.web.app/).
 
