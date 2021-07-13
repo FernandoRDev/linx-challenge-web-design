@@ -4,7 +4,7 @@
 
 The challenge is to develop a responsive page based on the desktop and mobile layouts provided.  
 
-[Provided design](https://www.figma.com/file/iR9UNO7MzXntlVqYyJPGsb/Testes-Webdesign-2021-Candidato?node-id=1267%3A0)
+[Figma Design](https://www.figma.com/file/iR9UNO7MzXntlVqYyJPGsb/Testes-Webdesign-2021-Candidato?node-id=1267%3A0)
 
 ### ✔ The result
 
@@ -23,7 +23,9 @@ The challenge is to develop a responsive page based on the desktop and mobile la
 5. Live Sass Compiler
 6. BEM Naming Convention
 
-To run the project you must open the index.html file or [see online](https://linx-challenge-webdesign.web.app/)
+### 👀 how to see the project?
+
+To run the project you must download it and open the index.html file or you can see online [here](https://linx-challenge-webdesign.web.app/).
 
 ### 👨‍💻 Author
   
